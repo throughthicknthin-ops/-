@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>연봉 실수령액 계산기</title>
+    <meta
+      name="description"
+      content="연봉 입력 시 세후 월 실수령액을 즉시 계산합니다. 4대보험, 소득세, 연말정산 가이드와 연봉 협상 팁까지 제공합니다."
+    />
+    <meta
+      name="keywords"
+      content="연봉계산기, 실수령액, 세후연봉, 4대보험, 소득세, 연말정산, 연봉협상, 월급계산"
+    />
+    <meta name="author" content="연봉 실수령액 계산기" />
+    <meta
+      property="og:title"
+      content="연봉 실수령액 계산기 - 세후 월급 즉시 계산"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="연봉 입력 시 세후 월 실수령액을 즉시 계산합니다. 4대보험, 소득세, 연말정산 가이드와 연봉 협상 팁까지 제공합니다."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="연봉 실수령액 계산기" />
+    <meta
+      name="twitter:description"
+      content="연봉 입력 시 세후 월 실수령액을 즉시 계산합니다."
+    />
+    <!-- Adsense (옵션): .env의 VITE_ADS_CLIENT, VITE_ADS_SLOT 설정 시 동작 -->
+    <script type="module">
+      const c = import.meta?.env?.VITE_ADS_CLIENT;
+      if (c) {
+        const s = document.createElement("script");
+        s.async = true;
+        s.crossOrigin = "anonymous";
+        s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${c}`;
+        document.head.appendChild(s);
+        document.documentElement.setAttribute("data-ads", "on");
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
