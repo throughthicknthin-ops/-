@@ -1,34 +1,70 @@
-import { Routes, Route, Link } from "react-router-dom";
-import Calculator from "./components/Calculator";
-
-function FourInsGuide() {
-  return <div className="p-4">4대 보험 가이드</div>;
-}
-function TaxGuide() {
-  return <div className="p-4">세금 가이드</div>;
-}
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import InsuranceGuide from "./pages/InsuranceGuide";
+import TaxGuide from "./pages/TaxGuide";
+import SalaryTips from "./pages/SalaryTips";
+import FAQ from "./pages/FAQ";
 
 export default function App() {
+  const location = useLocation();
+
+  const navItems = [
+    { path: "/", label: "계산기" },
+    { path: "/insurance", label: "4대보험" },
+    { path: "/tax", label: "세금 가이드" },
+    { path: "/tips", label: "연봉 협상" },
+    { path: "/faq", label: "FAQ" },
+  ];
+
   return (
-    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100">
-      <nav className="p-4 border-b dark:border-slate-700 flex gap-4">
-        <Link to="/" className="underline">
-          실수령액 계산기
-        </Link>
-        <Link to="/four-insurance" className="underline">
-          4대 보험
-        </Link>
-        <Link to="/tax-guide" className="underline">
-          세금 가이드
-        </Link>
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-white shadow-sm sticky top-0 z-10">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="flex h-16 items-center justify-between">
+            <Link to="/" className="text-xl font-bold text-slate-900">
+              💰 연봉계산기
+            </Link>
+            <div className="hidden md:flex space-x-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? "bg-blue-100 text-blue-700"
+                      : "text-slate-600 hover:bg-slate-100"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className="md:hidden">
+              <select
+                value={location.pathname}
+                onChange={(e) => (window.location.hash = `#${e.target.value}`)}
+                className="rounded border px-3 py-1 text-sm"
+              >
+                {navItems.map((item) => (
+                  <option key={item.path} value={item.path}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
       </nav>
-      <div className="mx-auto max-w-3xl px-4 py-6">
+
+      <main className="mx-auto max-w-7xl px-4 py-8">
         <Routes>
-          <Route path="/" element={<Calculator />} />
-          <Route path="/four-insurance" element={<FourInsGuide />} />
-          <Route path="/tax-guide" element={<TaxGuide />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/insurance" element={<InsuranceGuide />} />
+          <Route path="/tax" element={<TaxGuide />} />
+          <Route path="/tips" element={<SalaryTips />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
-      </div>
+      </main>
     </div>
   );
 }
