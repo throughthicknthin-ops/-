@@ -53,6 +53,9 @@
       }
       gtag("js", new Date());
       gtag("config", "G-HDYD9T5N3S", { send_page_view: true });
+      
+      // 계산 버튼 클릭 트래킹
+      function trackCalc(){ gtag('event','calculate_click',{section:'net_salary'}); }
     </script>
 
     <!-- 구조화 데이터 -->
@@ -68,6 +71,19 @@
           "query-input": "required name=search_term_string"
         }
       }
+    </script>
+    
+    <!-- 계산기 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"SoftwareApplication",
+      "name":"연봉 실수령액 계산기",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"Web",
+      "url":"https://yeonbong.com/",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}
+    }
     </script>
   </head>
   <body class="bg-white text-slate-900">
