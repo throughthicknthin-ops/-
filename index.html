@@ -31,6 +31,19 @@
       name="twitter:description"
       content="연봉 입력 시 세후 월 실수령액을 즉시 계산합니다."
     />
+    <!-- Google tag (gtag.js) GA4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HDYD9T5N3S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HDYD9T5N3S", { send_page_view: true });
+    </script>
     <!-- Adsense (옵션): .env의 VITE_ADS_CLIENT, VITE_ADS_SLOT 설정 시 동작 -->
     <script type="module">
       const c = import.meta?.env?.VITE_ADS_CLIENT;
