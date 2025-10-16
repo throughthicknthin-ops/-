@@ -42,8 +42,11 @@
     <meta name="twitter:image" content="https://yeonbong.com/og-image.png" />
 
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-XXXXXXXXXXXX"
-         crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-XXXXXXXXXXXX"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- GA4 -->
     <script
@@ -57,9 +60,11 @@
       }
       gtag("js", new Date());
       gtag("config", "G-HDYD9T5N3S", { send_page_view: true });
-      
+
       // 계산 버튼 클릭 트래킹
-      function trackCalc(){ gtag('event','calculate_click',{section:'net_salary'}); }
+      function trackCalc() {
+        gtag("event", "calculate_click", { section: "net_salary" });
+      }
     </script>
 
     <!-- 구조화 데이터 -->
@@ -76,22 +81,26 @@
         }
       }
     </script>
-    
+
     <!-- 계산기 구조화 데이터 -->
     <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"SoftwareApplication",
-      "name":"연봉 실수령액 계산기",
-      "applicationCategory":"FinanceApplication",
-      "operatingSystem":"Web",
-      "url":"https://yeonbong.com/",
-      "offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "연봉 실수령액 계산기",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://yeonbong.com/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+      }
     </script>
   </head>
   <body class="bg-white text-slate-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <footer style="text-align: center; padding: 20px; border-top: 1px solid #e5e7eb; margin-top: 40px;">
+      <a href="/privacy.html" style="color: #6b7280; text-decoration: none;">개인정보처리방침</a>
+    </footer>
   </body>
 </html>
